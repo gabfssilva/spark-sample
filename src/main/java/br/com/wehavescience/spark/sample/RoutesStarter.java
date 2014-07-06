@@ -59,6 +59,7 @@ public class RoutesStarter {
                 new ResourceNotFoundException();
             }
 
+            customer = asObject(request.body(), Customer.class);
             customer.setId(parseInt(request.params(":id")));
             service.save(customer);
             return customer;
