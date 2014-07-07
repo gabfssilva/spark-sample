@@ -23,9 +23,7 @@ public class RoutesStarter {
         setPort(9090);
 
         //listing all
-        get("/customers", CONTENT_TYPE, (request, response) -> {
-            return service.findAll();
-        }, new JsonTransformer());
+        get("/customers", CONTENT_TYPE, (request, response) -> service.findAll(), new JsonTransformer());
 
         //getting some specific customer
         get("/customers/:id", CONTENT_TYPE, (request, response) -> {
