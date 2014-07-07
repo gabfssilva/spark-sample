@@ -25,7 +25,7 @@ public class RoutesStarter {
         //listing all
         get("/customers", CONTENT_TYPE, (request, response) -> service.findAll(), new JsonTransformer());
 
-        //getting some specific customer
+        //getting a specific customer
         get("/customers/:id", CONTENT_TYPE, (request, response) -> {
             Customer customer = service.findById(parseInt(request.params(":id")));
 
